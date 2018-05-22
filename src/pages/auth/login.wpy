@@ -38,7 +38,7 @@
       </view>
 
       <view class="weui-btn-area">
-        <button class="weui-btn" type="primary" @tap="submit">登录</button>
+        <button class="weui-btn" type="primary" @tap="submmit">登录</button>
       </view>
     </view>
   </view>
@@ -74,7 +74,7 @@
         this.password = e.detail.value
       },
       // 表单提交
-      async submit() {
+      async submmit() {
         // 提交时重置错误
         this.error = false
         this.errorMessage = ''
@@ -102,6 +102,8 @@
 
           // 201 为登录正确，返回上一页
           if (authResponse.statusCode === 201) {
+            // 获取用户权限
+            this.$parent.getPerms()
             wepy.navigateBack()
           }
         } catch (err) {
@@ -120,6 +122,8 @@
 
         // 登录成功返回上一页
         if (authResponse.statusCode === 201) {
+          // 获取用户权限
+          this.$parent.getPerms()
           wepy.navigateBack()
         }
       } catch (err) {
