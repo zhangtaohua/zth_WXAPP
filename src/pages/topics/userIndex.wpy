@@ -1,0 +1,48 @@
+<template>
+  <view class="page">
+    <view class="page__bd">
+      <!--应用组件-->
+      <topiclist :syncData.sync="requestData" :syncUrl.sync="requestUrl"></topiclist>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  // 引入自己定义的组件 只能是用小写
+  import topicList from '@/components/topicList'
+
+  export default class UserIndex extends wepy.page {
+    config = {
+      navigationBarTitleText: 'Ta 发布的话题',
+      enablePullDownRefresh: true
+    }
+    data = {
+      requestData: {},
+      requestUrl: null
+    }
+    components = {
+      topiclist: topicList
+    }
+
+    onLoad(options) {
+      this.requestUrl = 'users/' + options.user_id + '/topics'
+      // 组件数据改变，也需要调用 this.$apply()
+      this.$apply()
+      // 调用组件 reload 方法
+      this.$invoke('topiclist', 'reload')
+    }
+    // 下拉刷新
+    async onPullDownRefresh() {
+      // 调用组件 reload 方法
+      // this.$invoke 来触发组件中的方法，第一个参数是组件名，第二个参数是组件内部的方法。
+      await this.$invoke('topiclist', 'reload')
+      wepy.stopPullDownRefresh()
+    }
+    // 上拉加载更多
+    async onReachBottom () {
+      // 调用组件 loadMore 方法
+      this.$invoke('topiclist', 'loadMore')
+    }
+  }
+</script>
