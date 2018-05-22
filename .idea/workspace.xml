@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="020d537d-a7e0-4d7d-a9f4-f3818450b0ec" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pages/auth/register.wpy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.wpy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/auth/login.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/auth/login.wpy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/auth/register.wpy" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/auth/register.wpy" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -46,8 +43,8 @@
       <file leaf-file-name="register.wpy" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/auth/register.wpy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
-              <caret line="136" column="7" lean-forward="true" selection-start-line="136" selection-start-column="7" selection-end-line="136" selection-end-column="7" />
+            <state relative-caret-position="367">
+              <caret line="220" lean-forward="true" selection-start-line="220" selection-end-line="220" />
               <folding>
                 <element signature="n#style#0;n#image#0;n#view#1;n#view#1;n#modal#0;n#view#0;n#view#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="e#2082#2105#0" expanded="true" />
@@ -212,15 +209,16 @@
       <updated>1526876180848</updated>
       <workItem from="1526876182076" duration="2163000" />
       <workItem from="1526886422540" duration="9948000" />
-      <workItem from="1526952003053" duration="4828000" />
+      <workItem from="1526952003053" duration="5232000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16939000" />
+    <option name="totallyTimeSpent" value="17343000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="790" y="41" width="1130" height="935" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -376,8 +374,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/auth/register.wpy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="136" column="7" lean-forward="true" selection-start-line="136" selection-start-column="7" selection-end-line="136" selection-end-column="7" />
+        <state relative-caret-position="367">
+          <caret line="220" lean-forward="true" selection-start-line="220" selection-end-line="220" />
           <folding>
             <element signature="n#style#0;n#image#0;n#view#1;n#view#1;n#modal#0;n#view#0;n#view#0;n#template#0;n#!!top" expanded="true" />
             <element signature="e#2082#2105#0" expanded="true" />
