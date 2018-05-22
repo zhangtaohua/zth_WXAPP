@@ -1,8 +1,8 @@
 import wepy from 'wepy'
 
 // 服务器接口地址
-const host = 'http://www.zth.com/api'
-// const host = __BASE_URL__
+const servicesHost = 'http://www.zth.com/api'
+// const servicesHost = __BASE_URL__
 
 // 普通请求
 const request = async (options, showLoading = true) => {
@@ -17,7 +17,7 @@ const request = async (options, showLoading = true) => {
     wepy.showLoading({title: '加载中'})
   }
   // 拼接请求地址
-  options.url = host + '/' + options.url
+  options.url = servicesHost + '/' + options.url
   // 调用小程序的 request 方法
   let response = await wepy.request(options)
 
@@ -48,7 +48,7 @@ const login = async (params = {}) => {
   // 接口请求 weapp/authorizations
   let authResponse = await request({
     url: 'weapp/authorizations',
-    // url: host + '/' + 'weapp/authorizations',
+    // url: servicesHost + '/' + 'weapp/authorizations',
     data: params,
     method: 'POST'
   })
@@ -66,7 +66,7 @@ const login = async (params = {}) => {
 const refreshToken = async (accessToken) => {
   // 请求刷新接口
   let refreshResponse = await wepy.request({
-    url: host + '/' + 'authorizations/current',
+    url: servicesHost + '/' + 'authorizations/current',
     method: 'PUT',
     header: {
       'Authorization': 'Bearer ' + accessToken
@@ -131,7 +131,7 @@ const logout = async (params = {}) => {
   let accessToken = wepy.getStorageSync('access_token')
   // 调用删除 Token 接口，让 Token 失效
   let logoutResponse = await wepy.request({
-    url: host + '/' + 'authorizations/current',
+    url: servicesHost + '/' + 'authorizations/current',
     method: 'DELETE',
     header: {
       'Authorization': 'Bearer ' + accessToken
@@ -154,7 +154,7 @@ const updateFile = async (options = {}) => {
   let accessToken = await getToken()
 
   // 拼接url
-  options.url = host + '/' + options.url
+  options.url = servicesHost + '/' + options.url
   let header = options.header || {}
   // 将 token 设置在 header 中
   header.Authorization = 'Bearer ' + accessToken
