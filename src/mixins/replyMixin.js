@@ -4,7 +4,7 @@ import api from '@/utils/api'
 
 export default class ReplyMixin extends wepy.mixin {
   config = {
-    enablePullDownRefresh: true
+    enablePullDownRefresh: true,
   }
   data = {
     // 回复数据
@@ -33,15 +33,10 @@ export default class ReplyMixin extends wepy.mixin {
 
         // 获取当前用户
         let user = await this.$parent.getCurrentUser()
+        // 格式化回复创建时间
         replies.forEach((reply) => {
           // 控制是否可以删除
           reply.can_delete = this.canDelete(user, reply)
-          // 格式化回复创建时间
-          reply.created_at_diff = util.diffForHumans(reply.created_at)
-        })
-
-        // 格式化回复创建时间
-        replies.forEach(function (reply) {
           reply.created_at_diff = util.diffForHumans(reply.created_at)
         })
         // 如果reset不为true则合并 this.replies；否则直接覆盖

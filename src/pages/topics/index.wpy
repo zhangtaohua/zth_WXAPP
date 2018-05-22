@@ -121,6 +121,7 @@
           // 请求成功将数据添加至缓存
           if (categoriesResponse.statusCode === 200) {
             categories = categoriesResponse.data.data
+            // 缓存到 sotrage 中
             wepy.setStorageSync('categories', categories)
           }
         } catch (err) {

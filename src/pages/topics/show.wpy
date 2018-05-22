@@ -12,16 +12,16 @@
     display: block;
     border-radius: 50%;
   }
-  .create-reply {
-    width: 40px;
-    height: 40px;
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-  }
-  .topic-title {
-    padding: 15px;
-  }
+.topic-title {
+  padding: 15px;
+}
+.create-reply {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+}
 </style>
 
 <template>
@@ -169,24 +169,6 @@
         this.getTopic(this.topic.id)
       })
     }
-
-    onShareAppMessage (res) {
-      return {
-        // 标题是话题标题
-        title: this.topic.title,
-        // 路径为话题详情路径
-        path: '/pages/topics/show?id=' + this.topic.id,
-        success: function(res) {
-          // 转发成功
-          console.log(res)
-        },
-        fail: function(res) {
-          // 转发失败
-          console.log(res)
-        }
-      }
-    }
-
     methods = {
       async deleteTopic() {
         // 删除确认
@@ -235,6 +217,20 @@
           setTimeout(function() {
             wepy.navigateBack()
           }, 2000)
+        }
+      }
+    }
+    onShareAppMessage (res) {
+      return {
+        title: this.topic.title,
+        path: '/pages/topics/show?id=' + this.topic.id,
+        success: function(res) {
+          // 转发成功
+          console.log(res)
+        },
+        fail: function(res) {
+          // 转发失败
+          console.log(res)
         }
       }
     }

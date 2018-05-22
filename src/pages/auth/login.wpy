@@ -80,7 +80,7 @@
         this.errorMessage = ''
 
         if (!this.username || !this.password) {
-          this.errorMessage = '请填写账户名和密码'
+          this.errorMessage = '请填写账户名或密码'
           return
         }
 
